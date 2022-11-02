@@ -1,6 +1,9 @@
-.PHONY: build-angular-7 build-angular-13 build-angular-14 build-python-3.6 build-python-3.7 build-python-3.8
-
 TAG=xdung24/vidiva-base-images
+
+.PHONY: help
+
+help: ## Show this help message.
+	@egrep -h '\s##\s' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-20s\033[0m %s\n", $$1, $$2}'
 
 build-angular-7: ## Build angular-7 and push to docker hub
 	@docker buildx build --platform linux/arm64,linux/amd64 --push --tag $(TAG):angular-7 -f angular-7.Dockerfile .

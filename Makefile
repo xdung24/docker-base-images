@@ -43,3 +43,6 @@ python-3.9: ## Build python-3.9 and push to docker hub
 
 python-3.10: ## Build python-3.10 and push to docker hub
 	@docker buildx build --platform linux/arm64,linux/amd64 --push --tag $(TAG):python-3.10 -f python-3.10.Dockerfile .
+
+python-3.11: ## Build python-3.11 and push to docker hub
+	@docker buildx build --platform linux/arm64,linux/amd64 --push --tag $(TAG):python-3.11 -f python-3.11.Dockerfile .

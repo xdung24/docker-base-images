@@ -5,5 +5,6 @@ RUN apt-get update -yq \
     && apt-get install gcc g++ nodejs -yq make git
 
 RUN npm update -g npm
-RUN npm install @angular-devkit/build-angular -g
+RUN npm install @angular-devkit/core@14.2.8 -g
+RUN npm install @angular-devkit/build-angular@14.2.8 -g
 RUN npm install @angular/cli@14.2 -g

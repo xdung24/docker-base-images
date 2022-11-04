@@ -4,6 +4,31 @@
 
 [Docker](https://hub.docker.com/repository/docker/xdung24/vidiva-base-images)  
 
+
+<details>
+
+  <summary>Build redis ui images</summary>
+
+  ```bash
+  # build redis ui
+  make redis-ui-latest
+  ```
+
+</details>
+
+
+<details>
+
+  <summary>Build DNS Server images</summary>
+
+  ```bash
+  # build dns server
+  make dns-server-latest
+  ```
+
+</details>
+
+
 <details>
 
   <summary>Build angular images</summary>

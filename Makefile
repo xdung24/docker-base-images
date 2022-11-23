@@ -45,10 +45,3 @@ python-3.10: ## Build python-3.10 and push to docker hub
 
 python-3.11: ## Build python-3.11 and push to docker hub
 	@docker buildx build --platform linux/arm64,linux/amd64 --push --tag $(TAG):python-3.11 -f python-3.11.Dockerfile .
-
-redis-ui-latest: ## Build redis-ui and push to docker hub
-	@docker buildx build --platform linux/arm64,linux/amd64 --push --tag xdung24/redis-ui:latest  -f redis-ui-latest.Dockerfile  .
-
-dns-server-latest: ## Build dns-server and push to docker hub
-	@docker buildx build --platform linux/arm64,linux/amd64 --push --tag xdung24/dns-server:latest  -f dns-server-latest.Dockerfile  .
-

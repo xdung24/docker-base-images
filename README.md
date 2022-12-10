@@ -4,7 +4,7 @@
 
 [Docker](https://hub.docker.com/repository/docker/xdung24/vidiva-base-images)  
 
-
+[Mapping angular & node.js version](https://gist.github.com/xdung24/d33578f84c4a91a7f236f558c9e65b5e)
 <details>
 
   <summary>Build redis ui images</summary>

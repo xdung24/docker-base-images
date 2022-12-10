@@ -1,32 +1,12 @@
 # vidiva-base-images  
 
-[Repo](https://github.com/xdung24/vidiva-base-images)  
+[Repo](https://github.com/xdung24/docker-base-images)  
 
-[Docker](https://hub.docker.com/repository/docker/xdung24/vidiva-base-images)  
+[Angular Docker](https://hub.docker.com/repository/docker/xdung24/angular-base-images)  
+
+[Python Docker](https://hub.docker.com/repository/docker/xdung24/python-base-images)  
 
 [Mapping angular & node.js version](https://gist.github.com/xdung24/d33578f84c4a91a7f236f558c9e65b5e)
-<details>
-
-  <summary>Build redis ui images</summary>
-
-  ```bash
-  # build redis ui
-  make redis-ui-latest
-  ```
-
-</details>
-
-
-<details>
-
-  <summary>Build DNS Server images</summary>
-
-  ```bash
-  # build dns server
-  make dns-server-latest
-  ```
-
-</details>
 
 
 <details>
@@ -74,6 +54,10 @@
   make angular-14
   ```
 
+  ```bash
+  # build angular 15
+  make angular-15
+  ```
 </details>
 
 <details>

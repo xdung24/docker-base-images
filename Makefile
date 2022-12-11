@@ -6,7 +6,7 @@ PYTHON_TAG=xdung24/python-base-images
 help: ## Show this help message.
 	@egrep -h '\s##\s' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-20s\033[0m %s\n", $$1, $$2}'
 
-angular: angular-7 angular-8 ## Build all angular images and push to docker hub 
+angular: angular-7 angular-8 angular-9 angular-10 angular-11 angular-12 angular-13 angular-14 angular-15 ## Build all angular images and push to docker hub 
 
 angular-7: ## Build angular-7 and push to docker hub
 	@docker buildx build --platform linux/arm64,linux/amd64 --push --tag $(ANGULAR_TAG):7 -f angular-7.Dockerfile .

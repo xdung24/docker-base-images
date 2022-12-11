@@ -3,7 +3,7 @@ RUN apt-get update -yq \
     && apt-get install curl gnupg -yq \
     && curl -sL https://deb.nodesource.com/setup_12.x | bash \
     && apt-get install gcc g++ nodejs -yq make git
-RUN apt-get install nano vim
+RUN apt-get install -yq nano vim
 
 RUN npm update -g npm
 RUN npm install @angular-devkit/core@11.2.19 -g

@@ -5,7 +5,7 @@ ENV PYTHONUNBUFFERED=1
 ENV LANG en_US.utf8
 
 RUN apt-get install -yq build-essential libssl-dev libffi-dev mariadb-client libmysqlclient-dev libxslt-dev libffi6 curl wget make git
-RUN apt-get install nano vim
+RUN apt-get install -yq nano vim
 
 RUN python3 -m pip install pip
 RUN pip install --upgrade pip

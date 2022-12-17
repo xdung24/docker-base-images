@@ -3,8 +3,7 @@ ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 ENV LANG en_US.utf8
 
-RUN apt-get update -yq && apt-get install -yq  build-essential libssl-dev libffi-dev python3-dev mariadb-client libxslt-dev curl wget make git
-RUN apt-get install -yq nano vim
+RUN apt-get -yq update && apt-get install -yq build-essential libssl-dev libffi-dev mariadb-client default-libmysqlclient-dev  libxslt-dev python3-dev curl wget make git nano vim
 
 RUN pip install --upgrade pip
 
@@ -14,4 +13,7 @@ RUN apt-get install -yq tzdata && \
 
 ENV TZ="Asia/Ho_Chi_Minh"
 
+RUN mkdir -p /backenddjango/
 ENTRYPOINT ["/bin/sh"]
+WORKDIR /backenddjango/
+CMD ["/entrypoint.sh"]

@@ -15,4 +15,7 @@ ENV TZ="Asia/Ho_Chi_Minh"
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 RUN ln -s /usr/bin/python3.6 /usr/local/bin/python3
 
+RUN mkdir -p /backenddjango/
 ENTRYPOINT ["/bin/sh"]
+WORKDIR /backenddjango/
+CMD ["/entrypoint.sh"]

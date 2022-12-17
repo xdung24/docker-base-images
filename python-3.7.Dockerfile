@@ -14,4 +14,7 @@ RUN apt-get install -yq tzdata && \
 
 ENV TZ="Asia/Ho_Chi_Minh"
 
+RUN mkdir -p /backenddjango/
 ENTRYPOINT ["/bin/sh"]
+WORKDIR /backenddjango/
+CMD ["/entrypoint.sh"]

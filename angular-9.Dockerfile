@@ -10,4 +10,7 @@ RUN npm install @angular-devkit/core@9.1.15 -g
 RUN npm install @angular-devkit/build-angular@0.901.15 -g
 RUN npm install @angular/cli@9.1.15 -g
 
+RUN mkdir -p /frontendangular/
 ENTRYPOINT ["/bin/sh"]
+WORKDIR /frontendangular/
+CMD ["/entrypoint.sh"]

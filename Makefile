@@ -1,5 +1,6 @@
 ANGULAR_TAG=xdung24/angular-base-images
 PYTHON_TAG=xdung24/python-base-images
+NODE_TAG=xdung24/node-base-images
 
 .PHONY: help
 
@@ -57,3 +58,20 @@ python-3.10: ## Build python-3.10 and push to docker hub
 
 python-3.11: ## Build python-3.11 and push to docker hub
 	@docker buildx build --platform linux/arm64,linux/amd64 --push --tag $(PYTHON_TAG):3.11 -f python-3.11.Dockerfile .
+
+node: node-10 node-12 node-14 node-16  ## Build all node images and push to docker hub
+
+node-10: ## Build node-10 and push to docker hub
+	@docker buildx build --platform linux/arm64,linux/amd64 --push --tag $(NODE_TAG):10 -f node-10.Dockerfile .
+
+node-12: ## Build node-12 and push to docker hub
+	@docker buildx build --platform linux/arm64,linux/amd64 --push --tag $(NODE_TAG):12 -f node-12.Dockerfile .
+
+node-14: ## Build node-14 and push to docker hub
+	@docker buildx build --platform linux/arm64,linux/amd64 --push --tag $(NODE_TAG):14 -f node-14.Dockerfile .
+
+node-16: ## Build node-16 and push to docker hub
+	@docker buildx build --platform linux/arm64,linux/amd64 --push --tag $(NODE_TAG):16 -f node-16.Dockerfile .
+
+node-18: ## Build node-18 and push to docker hub
+	@docker buildx build --platform linux/arm64,linux/amd64 --push --tag $(NODE_TAG):18 -f node-18.Dockerfile .

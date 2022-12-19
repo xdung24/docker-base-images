@@ -13,6 +13,9 @@ RUN apt-get install -yq tzdata && \
 ENV TZ="Asia/Ho_Chi_Minh"
 
 RUN mkdir -p /backenddjango/
+RUN mkdir -p /opt/scripts/
+RUN echo 'export PATH="$PATH:/opt/scripts"' >> /root/.bashrc 
+
 ENTRYPOINT ["/bin/sh"]
 WORKDIR /backenddjango/
 CMD ["/entrypoint.sh"]

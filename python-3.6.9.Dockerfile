@@ -16,6 +16,9 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 RUN ln -s /usr/bin/python3.6 /usr/local/bin/python3
 
 RUN mkdir -p /backenddjango/
+RUN mkdir -p /opt/scripts/
+RUN echo 'export PATH="$PATH:/opt/scripts"' >> /root/.bashrc 
+
 ENTRYPOINT ["/bin/sh"]
 WORKDIR /backenddjango/
 CMD ["/entrypoint.sh"]

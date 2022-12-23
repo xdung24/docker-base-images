@@ -16,6 +16,9 @@ RUN mkdir -p /backenddjango/
 RUN mkdir -p /opt/scripts/
 RUN echo 'export PATH="$PATH:/opt/scripts"' >> /root/.bashrc 
 
+RUN SNIPPET="export PROMPT_COMMAND='history -a' && export HISTFILE=/root/.bash_history" \
+    && echo "$SNIPPET" >> "/root/.bashrc"
+
 ENTRYPOINT ["/bin/sh"]
 WORKDIR /backenddjango/
 CMD ["/entrypoint.sh"]

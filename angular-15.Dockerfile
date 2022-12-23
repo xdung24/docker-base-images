@@ -10,6 +10,12 @@ RUN npm install @angular-devkit/core@15 -g
 RUN npm install @angular-devkit/build-angular@15 -g
 RUN npm install @angular/cli@15 -g
 
+RUN mkdir -p /opt/scripts/
+RUN echo 'export PATH="$PATH:/opt/scripts"' >> /root/.bashrc 
+
+RUN SNIPPET="export PROMPT_COMMAND='history -a' && export HISTFILE=/root/.bash_history" \
+    && echo "$SNIPPET" >> "/root/.bashrc"
+
 RUN mkdir -p /frontendangular/
 ENTRYPOINT ["/bin/sh"]
 WORKDIR /frontendangular/

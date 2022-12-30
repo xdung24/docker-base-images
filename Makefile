@@ -1,6 +1,7 @@
 ANGULAR_TAG=xdung24/angular-base-images
 PYTHON_TAG=xdung24/python-base-images
 NODE_TAG=xdung24/node-base-images
+GO_TAG=xdung24/go-base-images
 
 .PHONY: help
 
@@ -75,3 +76,11 @@ node-16: ## Build node-16 and push to docker hub
 
 node-18: ## Build node-18 and push to docker hub
 	@docker buildx build --platform linux/arm64,linux/amd64 --push --tag $(NODE_TAG):18 -f node-18.Dockerfile .
+
+go: go-18 go-19 ## Build all go images and push to docker hub
+
+go-18: ## Build go-18 and push to docker hub
+	@docker buildx build --platform linux/arm64,linux/amd64 --push --tag $(GO_TAG):18 -f go-18.Dockerfile .
+
+go-19: ## Build go-19 and push to docker hub
+	@docker buildx build --platform linux/arm64,linux/amd64 --push --tag $(GO_TAG):19 -f go-19.Dockerfile .

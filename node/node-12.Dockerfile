@@ -1,6 +1,7 @@
 FROM node:12.22.12-alpine
 
-RUN apk add wget curl nano vim
+RUN apk update && apk upgrade
+RUN apk add --no-cache wget curl nano vim
 RUN mkdir -p /app/
 RUN mkdir -p /opt/scripts/
 RUN echo 'export PATH="$PATH:/opt/scripts"' >> /root/.bashrc 

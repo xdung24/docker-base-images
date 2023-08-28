@@ -66,7 +66,7 @@ python-3.11: ## Build python-3.11 and push to docker hub
 python-3.11.4: ## Build python-3.11.4 and push to docker hub
 	@cd python && docker buildx build --platform linux/arm64,linux/amd64 --push --tag $(PYTHON_TAG):3.11.4 -f python-3.11.4.Dockerfile .
 
-node: node-10 node-12 node-14 node-16 node-18 ## Build all node images and push to docker hub
+node: node-10 node-12 node-14 node-16 node-18 node-20 ## Build all node images and push to docker hub
 
 node-10: ## Build node-10 and push to docker hub
 	@cd node && docker buildx build --platform linux/arm64,linux/amd64 --push --tag $(NODE_TAG):10 -f node-10.Dockerfile .

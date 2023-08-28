@@ -1,5 +1,6 @@
-FROM node:16
-RUN apt-get update -yq && apt-get install -yq wget curl nano 
+FROM node:16.20.2-alpine
+
+RUN apk add wget curl nano vim
 RUN mkdir -p /app/
 RUN mkdir -p /opt/scripts/
 RUN echo 'export PATH="$PATH:/opt/scripts"' >> /root/.bashrc 

@@ -1,5 +1,6 @@
-FROM node:10
-RUN apt-get update -yq && apt-get install -yq wget curl nano 
+FROM node:10.24.1-alpine
+
+RUN apk add wget curl nano vim
 RUN mkdir -p /app/
 RUN mkdir -p /opt/scripts/
 RUN echo 'export PATH="$PATH:/opt/scripts"' >> /root/.bashrc 

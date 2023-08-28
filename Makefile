@@ -40,7 +40,7 @@ angular-15: ## Build angular-15 and push to docker hub
 angular-16: ## Build angular-16 and push to docker hub
 	@cd angular && docker buildx build --platform linux/arm64,linux/amd64 --push --tag $(ANGULAR_TAG):15 -f angular-16.Dockerfile .
 
-python: python-3.6.9 python-3.6 python-3.7 python-3.8 python-3.9 python-3.10 python-3.11 ## Build all python images and push to docker hub
+python: python-3.6.9 python-3.6 python-3.7 python-3.8 python-3.9 python-3.10 python-3.11 python-3.11.4 ## Build all python images and push to docker hub
 
 python-3.6.9: ## Build python-3.6.9 and push to docker hub
 	@cd python && docker buildx build --platform linux/arm64,linux/amd64 --push --tag $(PYTHON_TAG):3.6.9 -f python-3.6.9.Dockerfile .
@@ -63,6 +63,9 @@ python-3.10: ## Build python-3.10 and push to docker hub
 python-3.11: ## Build python-3.11 and push to docker hub
 	@cd python && docker buildx build --platform linux/arm64,linux/amd64 --push --tag $(PYTHON_TAG):3.11 -f python-3.11.Dockerfile .
 
+python-3.11.4: ## Build python-3.11.4 and push to docker hub
+	@cd python && docker buildx build --platform linux/arm64,linux/amd64 --push --tag $(PYTHON_TAG):3.11.4 -f python-3.11.4.Dockerfile .
+
 node: node-10 node-12 node-14 node-16 node-18 ## Build all node images and push to docker hub
 
 node-10: ## Build node-10 and push to docker hub
@@ -79,6 +82,9 @@ node-16: ## Build node-16 and push to docker hub
 
 node-18: ## Build node-18 and push to docker hub
 	@cd node && docker buildx build --platform linux/arm64,linux/amd64 --push --tag $(NODE_TAG):18 -f node-18.Dockerfile .
+
+node-20: ## Build node-20 and push to docker hub
+	@cd node && docker buildx build --platform linux/arm64,linux/amd64 --push --tag $(NODE_TAG):20 -f node-20.Dockerfile .
 
 go: go-1.18 go-1.19 go-1.20 go-1.21 ## Build all go images and push to docker hub
 

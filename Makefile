@@ -38,7 +38,7 @@ angular-15: ## Build angular-15 and push to docker hub
 	@cd angular && docker buildx build --platform linux/arm64,linux/amd64 --push --tag $(ANGULAR_TAG):15 -f angular-15.Dockerfile .
 
 angular-16: ## Build angular-16 and push to docker hub
-	@cd angular && docker buildx build --platform linux/arm64,linux/amd64 --push --tag $(ANGULAR_TAG):15 -f angular-16.Dockerfile .
+	@cd angular && docker buildx build --platform linux/arm64,linux/amd64 --push --tag $(ANGULAR_TAG):16 -f angular-16.Dockerfile .
 
 python: python-3.6.9 python-3.6 python-3.7 python-3.8 python-3.9 python-3.10 python-3.11 python-3.11.4 ## Build all python images and push to docker hub
 

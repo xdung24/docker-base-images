@@ -11,10 +11,12 @@ RUN apt-get install -yq tzdata && \
 ENV TZ="Asia/Ho_Chi_Minh"
 
 COPY divawallet-3.11-requirements.txt /
+COPY diva-web-services-3.11-requirements.txt /
 COPY paykit-3.11-requirements.txt /
 
 RUN pip install --no-cache-dir --upgrade pip \
   && pip install --no-cache-dir -r /divawallet-3.11-requirements.txt \
+  && pip install --no-cache-dir -r /diva-web-services-3.11-requirements.txt \
   && pip install --no-cache-dir -r /paykit-3.11-requirements.txt
 
 RUN mkdir -p /backenddjango/

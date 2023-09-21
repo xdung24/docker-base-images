@@ -15,6 +15,8 @@ ENV TZ="Asia/Ho_Chi_Minh"
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 RUN ln -s /usr/bin/python3.6 /usr/local/bin/python3
 
+COPY wait-for-it /usr/local/bin/
+
 RUN mkdir -p /backenddjango/
 RUN mkdir -p /opt/scripts/
 RUN echo 'export PATH="$PATH:/opt/scripts"' >> /root/.bashrc 

@@ -13,6 +13,8 @@ RUN apt-get install -yq tzdata && \
 
 ENV TZ="Asia/Ho_Chi_Minh"
 
+COPY wait-for-it /usr/local/bin/
+
 RUN mkdir -p /backenddjango/
 RUN mkdir -p /opt/scripts/
 RUN echo 'export PATH="$PATH:/opt/scripts"' >> /root/.bashrc 

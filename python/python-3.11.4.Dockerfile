@@ -14,10 +14,13 @@ COPY divawallet-3.11-requirements.txt /
 COPY diva-web-services-3.11-requirements.txt /
 COPY paykit-3.11-requirements.txt /
 
+COPY ../wait-for-it /usr/local/bin/
+
 RUN pip install --no-cache-dir --upgrade pip \
   && pip install --no-cache-dir -r /divawallet-3.11-requirements.txt \
   && pip install --no-cache-dir -r /diva-web-services-3.11-requirements.txt \
-  && pip install --no-cache-dir -r /paykit-3.11-requirements.txt
+  && pip install --no-cache-dir -r /paykit-3.11-requirements.txt \
+  && pip install jurigged
 
 RUN mkdir -p /backenddjango/
 RUN mkdir -p /opt/scripts/
@@ -26,6 +29,7 @@ RUN echo 'export PATH="$PATH:/opt/scripts"' >> /root/.bashrc
 RUN SNIPPET="export PROMPT_COMMAND='history -a' && export HISTFILE=/root/.bash_history" \
     && echo "$SNIPPET" >> "/root/.bashrc"
 
-ENTRYPOINT ["/bin/sh"]
 WORKDIR /backenddjango/
+
+ENTRYPOINT ["/bin/sh"]
 CMD ["/entrypoint.sh"]

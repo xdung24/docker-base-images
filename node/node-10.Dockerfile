@@ -1,7 +1,8 @@
 FROM node:10.24.1-alpine
 
 RUN apk update && apk upgrade
-RUN apk add --no-cache wget curl nano vim
+RUN apk add --no-cache wget curl nano vim bash
+RUN npm install nodemon -g
 
 COPY wait-for-it /usr/local/bin/
 

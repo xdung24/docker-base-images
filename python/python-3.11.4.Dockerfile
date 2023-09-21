@@ -14,7 +14,7 @@ COPY divawallet-3.11-requirements.txt /
 COPY diva-web-services-3.11-requirements.txt /
 COPY paykit-3.11-requirements.txt /
 
-COPY ../wait-for-it /usr/local/bin/
+COPY wait-for-it /usr/local/bin/
 
 RUN pip install --no-cache-dir --upgrade pip \
   && pip install --no-cache-dir -r /divawallet-3.11-requirements.txt \
